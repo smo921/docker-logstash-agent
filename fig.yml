@@ -1,0 +1,5 @@
+logstash:
+  image: smo921/logstash:solo
+  volumes:
+    - ./templates:/logstash-templates
+    - /var/log:/local_logs/
