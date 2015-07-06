@@ -1,5 +1,10 @@
 logstash:
-  image: smo921/logstash:solo
+  image: smo921/logstash
+  dns:
+    - 172.17.0.181
+  external_links:
+    - dnsmasq
+    - dockerelk_redis_1:redis
   volumes:
-    - ./templates:/logstash-templates
+    - ./templates:/logstash.conf.d
     - /var/log:/local_logs/
